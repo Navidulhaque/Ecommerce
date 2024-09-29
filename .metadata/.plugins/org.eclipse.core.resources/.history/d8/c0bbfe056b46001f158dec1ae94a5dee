@@ -1,0 +1,11 @@
+@charset "UTF-8";
+*.icon-white {color : white}
+*.icon-silver {color : silver}
+*.icon-green {color : green}
+*.icon-dark {color : gray}
+*.icon-red {color : red}
+a {
+ text-decoration-line:none;
+  color: white;
+}
+

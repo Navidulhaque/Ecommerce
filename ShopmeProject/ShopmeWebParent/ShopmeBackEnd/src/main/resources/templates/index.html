@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+>
+  <head th:replace="~{fragments :: page_head('Home - Shopme Admin')}"></head>
+  <body>
+    <div class="container-fluid">
+      <div th:replace="~{navigation :: menu}"></div>
+      <div>
+        <h2>Shopme Control panel</h2>
+        Welcome
+        <a
+          th:href="@{/account}"
+          sec:authentication="principal.fullname"
+          style="color: blue"
+        ></a>
+		<br>
+		Your Roles are
+		<br>
+        <ul>
+            <li th:each="authority : ${#authentication.principal.authorities}" 
+                th:text="${authority.authority}"></li>
+        </ul>
+      </div>
+      <div th:replace="~{fragments :: footer}"></div>
+    </div>
+  </body>
+</html>
